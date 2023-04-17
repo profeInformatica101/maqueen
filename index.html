@@ -6,14 +6,128 @@
     <title>Métodos de la Clase Maqueen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
-            body {
-            background-color: #eee;
-            color: #333;
-            padding: 2rem;
-        }
-        h1, h4 {
-            color: black;
-        }
+
+    /* Estilos personalizados aquí */
+    body {
+      background-image: url('https://cdn.pixabay.com/photo/2018/08/02/16/28/olive-tree-3579922_960_720.jpg');
+      background-size: cover;
+      background-position: center;
+
+    }
+    h1{
+    color:green;
+    font-size: 101px;
+    background: rgba(255, 255, 255, 0.8);
+
+  }
+  
+
+    
+    #timer {
+      font-size: 12em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #listado{
+      font-size: 12em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #titulo{
+      font-size: 12em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #comentarios{
+      font-size: 33px;
+      font-weight: bold;
+      text-align: center;
+     color:white;
+      text-shadow: 2px 2px 5px #000;
+    }
+    #savedTimes{
+      color: #105312;
+    }
+    
+    .time-input {
+      border: none;
+      background-color: transparent;
+      font-size: 8em;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+
+    }
+    
+    .time-input:focus {
+      outline: none;
+ 
+    }
+
+    #time3, #time4 {
+      font-size: 2em;
+      padding: 20px 40px;
+    }
+
+    #start {
+      font-size: 1.5em;
+      padding: 10px 20px;
+    }
+
+    .configurador{
+      color:grey;
+    }
+    .logo-wrapper {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(5px);
+    margin: auto;
+  }
+
+  .logo-wrapper img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  /* Estilos personalizados aquí */
+@media (max-width: 767px) {
+  #timer {
+    font-size: 6em;
+  }
+  #titulo {
+    font-size: 4em;
+  }
+  .time-input {
+    font-size: 4em;
+  }
+  #time3,
+  #time4 {
+    font-size: 1.5em;
+    padding: 10px 20px;
+  }
+  #start {
+    font-size: 1em;
+    padding: 5px 10px;
+  }
+
+  h1{
+      font-size: 9em;
+      font-size: 58px;
+    }
+  
+}
+
         pre, code {
             background-color: rgba(213, 213, 213, 0.5);
             font-family: 'Courier New', monospace;

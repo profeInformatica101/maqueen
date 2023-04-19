@@ -207,6 +207,22 @@ robot = Maqueen()
 robot.set_led(0, 1)  // Encender el LED izquierdo
 robot.set_led(1, 0)  // Apagar el LED derecho
                 </code></pre>
+                        <p> Un ejemplo para realizar un indicador de dirección usando la función aviso_izquierda </p>
+<pre><code>
+from microbit import *
+from maqueen import *
+
+robot = Maqueen()
+
+def aviso_izquierda():
+    robot.set_led(1,1)
+    microbit.sleep(450)
+    robot.set_led(1,0)
+    microbit.sleep(450)
+    
+while True:
+    aviso_izquierda()
+                </code></pre>
                     </li>
                     <li>
                         <h4>read_distance</h4>

@@ -274,16 +274,26 @@ print("Sensor izquierdo:", left_sensor, "Sensor derecho:", right_sensor)
     </code></pre>
                 <h2>Sensor de distancia</h2>
                 <pre><code>
-        robot = Maqueen()
-        distance = robot.read_distance()
-        print("Distancia:", distance)
+from microbit import *
+from maqueen import *
+
+robot = Maqueen()
+
+def aviso_izquierda():
+    robot.set_led(1,1)
+    microbit.sleep(450)
+    robot.set_led(1,0)
+    microbit.sleep(450)
+    
+while True:
+    aviso_izquierda()
     </code></pre>
                 <h2>Sensores de línea</h2>
                 <pre><code>
         robot = Maqueen()
         left_line = robot.read_patrol(0)
         right_line = robot.read_patrol(1)
-        print("Línea izquierda:", left_line)
+        display.show("Línea izquierda:", left_line)
         print("Línea derecha:", right_line)
     </code></pre>
                 <h2>LEDs</h2>

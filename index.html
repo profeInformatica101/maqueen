@@ -233,6 +233,19 @@ robot = Maqueen()
 distancia = robot.read_distance()
 print("La distancia es:", distancia, "cm")
                 </code></pre>
+                        <p> Ejemplo de uso en la microbit que muestra la distancia</p>                    
+<pre><code>                        
+from microbit import *
+from maqueen import *
+
+robot = Maqueen()
+
+while True:
+    distancia = robot.read_distance()
+    display.scroll(int(distancia))
+    sleep(100)        
+</code></pre>                        
+                        
                     </li>
                     <li>
                         <h4>read_patrol</h4>

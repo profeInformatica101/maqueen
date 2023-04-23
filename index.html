@@ -274,6 +274,17 @@ print("Sensor izquierdo:", left_sensor, "Sensor derecho:", right_sensor)
     </code></pre>
                 <h2>Sensor de distancia</h2>
                 <pre><code>
+
+    </code></pre>
+                <h2>Sensores de línea</h2>
+            <pre><code>
+        robot = Maqueen()
+        left_line = robot.read_patrol(0)
+        right_line = robot.read_patrol(1)
+
+    </code></pre>
+<h2>LEDs</h2>
+ <pre><code>
 from microbit import *
 from maqueen import *
 
@@ -287,29 +298,32 @@ def aviso_izquierda():
     
 while True:
     aviso_izquierda()
-    </code></pre>
-                <h2>Sensores de línea</h2>
-                <pre><code>
-        robot = Maqueen()
-        left_line = robot.read_patrol(0)
-        right_line = robot.read_patrol(1)
-        display.show("Línea izquierda:", left_line)
-        print("Línea derecha:", right_line)
-    </code></pre>
-                <h2>LEDs</h2>
-                <pre><code>
-    robot = Maqueen()
-    robot.set_led(0, 1) # Encender LED izquierdo
-    robot.set_led(1, 0) # Apagar LED derecho
 </code></pre>
 
-                <h2>Sensor de patrulla</h2>
-                <pre><code>
-    robot = Maqueen()
-    left_patrol = robot.read_patrol(0)
-    right_patrol = robot.read_patrol(1)
-    print("Sensor de patrulla izquierdo:", left_patrol)
-    print("Sensor de patrulla derecho:", right_patrol)
+<h2>Sensor de patrulla (para sigue líneas)</h2>
+<pre><code>
+from microbit import *
+from maqueen import *
+
+robot = Maqueen()
+
+while True:
+    left_line = robot.read_patrol(0)
+    right_line = robot.read_patrol(1)
+    
+    if left_line == 0 and right_line == 0: # Ambos sensores detectan línea
+        display.show(Image.ARROW_N)
+        robot.forward()
+    elif left_line == 1 and right_line == 0: # Solo el sensor izquierdo detecta línea
+        display.show(Image.ARROW_E)
+        robot.turn_right()     
+    elif left_line == 0 and right_line == 1: # Solo el sensor derecho detecta línea
+        display.show(Image.ARROW_W)
+        robot.turn_left()
+    elif left_line == 1 and right_line == 1: # Ambos sensores no detectan línea
+        display.show(Image.ARROW_N)
+        robot.set_motor(0,-50)
+        robot.set_motor(1,-50) 
 </code></pre>
 
                 <h2>Programación</h2>

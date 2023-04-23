@@ -276,13 +276,7 @@ print("Sensor izquierdo:", left_sensor, "Sensor derecho:", right_sensor)
                 <pre><code>
 
     </code></pre>
-                <h2>Sensores de línea</h2>
-            <pre><code>
-        robot = Maqueen()
-        left_line = robot.read_patrol(0)
-        right_line = robot.read_patrol(1)
 
-    </code></pre>
 <h2>LEDs</h2>
  <pre><code>
 from microbit import *
@@ -300,7 +294,7 @@ while True:
     aviso_izquierda()
 </code></pre>
 
-<h2>Sensor de patrulla (para sigue líneas)</h2>
+<h2>Sensores de línea</h2>
 <pre><code>
 from microbit import *
 from maqueen import *
@@ -326,13 +320,7 @@ while True:
         robot.set_motor(1,-50) 
 </code></pre>
 
-                <h2>Programación</h2>
-                <p> Aquí hay un ejemplo de código Python:</p>
-                <pre><code>
-    from Maqueen import Maqueen
-    robot = Maqueen()
-    robot.forward()
-</code></pre>
+
             </div>
 
             <div id="sigue-lineas">

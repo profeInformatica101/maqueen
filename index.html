@@ -273,9 +273,26 @@ print("Sensor izquierdo:", left_sensor, "Sensor derecho:", right_sensor)
         robot.turn_right()
     </code></pre>
                 <h2>Sensor de distancia</h2>
-                <pre><code>
+<pre><code>
+from microbit import *
+from maqueen import *
 
-    </code></pre>
+robot = Maqueen()
+display.show(Image.HEART)
+
+while True:
+    distancia = robot.read_distance()
+    sleep(100)
+
+    if distancia <= 10:
+        robot.backward()
+        robot.girar_derecha()
+        sleep(500)  # Tiempo de espera después de girar hacia la derecha
+    else:
+        robot.forward()
+    
+        
+ </code></pre>
 
 <h2>LEDs</h2>
  <pre><code>

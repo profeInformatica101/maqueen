@@ -312,60 +312,20 @@ while True:
 </code></pre>
 
 <h2>Sensores de línea</h2>
-<pre><code>
-from microbit import *
-from maqueen import *
-
-robot = Maqueen()
-
-while True:
-    left_line = robot.read_patrol(0)
-    right_line = robot.read_patrol(1)
-    
-    if left_line == 0 and right_line == 0: # Ambos sensores detectan línea
-        display.show(Image.ARROW_N)
-        robot.forward()
-    elif left_line == 1 and right_line == 0: # Solo el sensor izquierdo detecta línea
-        display.show(Image.ARROW_E)
-        robot.turn_right()     
-    elif left_line == 0 and right_line == 1: # Solo el sensor derecho detecta línea
-        display.show(Image.ARROW_W)
-        robot.turn_left()
-    elif left_line == 1 and right_line == 1: # Ambos sensores no detectan línea
-        display.show(Image.ARROW_N)
-        robot.set_motor(0,-50)
-        robot.set_motor(1,-50) 
-</code></pre>
-
-
-            </div>
-
-            <div id="sigue-lineas">
-
-                <br> <br> <br>
-                <h1>Sigue Líneas con Maqueen</h1>
-                <p>Los sensores son dispositivos que detectan algún tipo de cambio en su entorno y convierten esa
-                    información en señales eléctricas que pueden ser procesadas por una computadora o un robot. En el
-                    caso del seguimiento de líneas con Maqueen, los sensores son sensores infrarrojos.</p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/ezcCvo2HQeQ"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <h2>Sensores Infrarrojos</h2>
-                <p>Los sensores infrarrojos son dispositivos que emiten y reciben luz infrarroja. Los sensores
+ <p>Los sensores infrarrojos son dispositivos que emiten y reciben luz infrarroja. Los sensores
                     infrarrojos utilizados en el seguimiento de líneas del Maqueen constan de dos partes: un emisor y un
                     receptor. El emisor emite una señal de luz infrarroja que se refleja en la superficie del suelo y es
                     detectada por el receptor.</p>
-                <p>Cuando el robot se mueve sobre una línea negra, la luz infrarroja es absorbida por la línea y no se
-                    refleja hacia el receptor. Esto provoca una disminución en la señal de salida del receptor. Por otro
-                    lado, cuando el robot se mueve sobre una superficie clara, la luz infrarroja se refleja hacia el
-                    receptor, lo que resulta en una señal de salida más fuerte.</p>
-                <h2>Sigue Líneas con Maqueen</h2>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ezcCvo2HQeQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 <p>Para implementar el seguimiento de líneas con Maqueen, se utilizan los sensores infrarrojos para
                     detectar la línea y ajustar el movimiento del robot en consecuencia. Si el sensor izquierdo detecta
                     la línea negra, el robot se moverá hacia la derecha para seguir la línea. Si el sensor derecho
                     detecta la línea negra, el robot se moverá hacia la izquierda para seguir la línea. Si ambos
                     sensores detectan la línea negra, el robot continuará recto.</p>
+
 <pre><code>
 from microbit import *
 from maqueen import *
@@ -390,15 +350,13 @@ while True:
         robot.set_motor(0,-50)
         robot.set_motor(1,-50) 
 </code></pre>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/86gylVts2Yo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <iframe id="inlineFrameExample" title="Inline Frame Example"
-                    src="https://profeinformatica101.github.io/tablero" width="450" height="450"></iframe>
+
 
             </div>
-  
+
+          <iframe id="inlineFrameExample" title="Inline Frame Example"
+                    src="https://profeinformatica101.github.io/tablero" width="450" height="450"></iframe>
+
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-oBqDVmMz4fnFO9gybB5Vv1Ll4OpWlGkM4G4N7c2zgQG2h/2B6xQgjqN3/l3w/7L5"
             crossorigin="anonymous"></script>
